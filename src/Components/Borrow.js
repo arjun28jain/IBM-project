@@ -1,6 +1,5 @@
 // Borrow.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
 
 const Borrow = () => {
