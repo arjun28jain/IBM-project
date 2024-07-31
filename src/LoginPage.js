@@ -15,7 +15,6 @@ const LoginPage = () => {
       <div className="bg-white p-10 rounded-lg shadow-lg text-center max-w-sm w-full">
         <img
           src={profilelogo}
-          alt="Profile Image"
           className="w-36 h-36 rounded-full mb-4 shadow-md translate-x-20 object-fill"
         />
         <br/>
