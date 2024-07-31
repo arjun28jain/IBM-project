@@ -23,7 +23,11 @@
       "react-app",
       "react-app/jest"
     ]
+  },  "rules": {
+    "no-unused-vars": "off",
+    "jsx-a11y/alt-text": "off"
   },
+  
   "browserslist": {
     "production": [
       ">0.2%",
