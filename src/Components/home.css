@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.stroke-black {
+    -webkit-text-stroke: 1px black; 
+    -webkit-text-stroke-color: 1px black; 
+  }
+  
+  .no-scrollbar {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}

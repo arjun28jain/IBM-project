@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import profilelogo from './profilelogo.jpg';
+import './home.css';
 
 const InvestmentGoals = () => {
   const [selectedButton, setSelectedButton] = useState(null);
@@ -35,13 +36,13 @@ const InvestmentGoals = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center py-0 relative">
-      <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md fixed top-0 z-50">
+    <div className="min-h-screen bg-white flex flex-col items-center py-0 relative no-scrollbar">
+      <nav className="w-full flex justify-between items-center p-4 bg-gray-800 shadow-md fixed top-0 z-50">
         <div className="flex items-center">
           <img src={profilelogo} alt="Logo" className="w-8 h-8 mr-2" />
-          <h1 className="text-2xl font-bold">WealthBuild</h1>
+          <h1 className="text-2xl font-bold text-white">WealthBuild</h1>
         </div>
-        <ul className="flex space-x-6 text-lg ml-auto mr-7">
+        <ul className="flex space-x-6 text-lg ml-auto mr-7 text-white no-">
           <li>
             <Link to="/home" className="hover:text-blue-500 cursor-pointer">
               Home
@@ -156,7 +157,7 @@ const InvestmentGoals = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center mt-6 no-scrollbar">
+        <div className="flex justify-between items-center mt-3 no-scrollbar">
           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
             <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '20%' }}></div>
           </div>

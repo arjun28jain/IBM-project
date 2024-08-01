@@ -1,44 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import profilelogo from './profilelogo.jpg';
-import heroImage from './heroImage.jpg'; // Add your hero image here
+import heroImage from './heroImage.jpg';
+import './home.css';
+
 
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
-      <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md fixed top-0 z-50">
+       <nav className="w-full flex justify-between items-center p-4 bg-gray-800 text-white shadow-md fixed top-0 z-50">
         <div className="flex items-center">
           <img src={profilelogo} alt="Logo" className="w-8 h-8 mr-2" />
           <h1 className="text-2xl font-bold">WealthBuild</h1>
         </div>
         <ul className="flex space-x-6 text-lg ml-auto mr-7">
           <li>
-            <Link to="/home" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/home" className="hover:text-blue-400 cursor-pointer">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/invest" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/invest" className="hover:text-blue-400 cursor-pointer">
               Invest
             </Link>
           </li>
           <li>
-            <Link to="/save" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/save" className="hover:text-blue-400 cursor-pointer">
               Save
             </Link>
           </li>
           <li>
-            <Link to="/spend" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/spend" className="hover:text-blue-400 cursor-pointer">
               Spend
             </Link>
           </li>
           <li>
-            <Link to="/borrow" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/borrow" className="hover:text-blue-400 cursor-pointer">
               Borrow
             </Link>
           </li>
           <li>
-            <Link to="/learn" className="hover:text-blue-500 cursor-pointer">
+            <Link to="/learn" className="hover:text-blue-400 cursor-pointer">
               Learn
             </Link>
           </li>
@@ -50,14 +52,15 @@ const HomePage = () => {
         </Link>
       </nav>
 
+
       <header className="w-full text-white flex flex-col items-center justify-center py-20 mt-16 relative">
-        <img src={heroImage} alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+        <img src={heroImage} alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-100" />
         <div className="relative z-10">
-          <h1 className="text-5xl font-bold mb-4 ">Revolutionizing Financial Advisory</h1>
-          <p className="text-xl mb-8 text-center max-w-2xl">
+          <h1 className="text-5xl font-bold mb-4 stroke-black stroke-darker ">Revolutionizing Financial Advisory</h1>
+          <p className="text-xl mb-8 text-center max-w-2xl translate-x-11">
             Empowering retail investors with personalized, data-driven financial advice using generative AI.
           </p>
-          <Link to="/learn" className="px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100">
+          <Link to="/learn" className="px-6 py-3 mb-5 absolute bg-white text-gray-800 rounded-lg font-bold hover:bg-gray-100">
             Learn More
           </Link>
         </div>
@@ -99,7 +102,7 @@ const HomePage = () => {
           <p className="text-xl mb-8">
             Become a part of a growing community of informed investors. Get started on your financial journey with WealthBuild.
           </p>
-          <Link to="/register" className="px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100">
+          <Link to="/invest" className="px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100">
             Get Started
           </Link>
         </div>
