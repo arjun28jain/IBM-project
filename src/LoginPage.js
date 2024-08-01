@@ -11,7 +11,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100 no-scrollbar">
+    <div className="flex justify-center items-center h-screen bg-gray-800 no-scrollbar">
       <div className="bg-white p-10 rounded-lg shadow-lg text-center max-w-sm w-full">
         <img
           src={profilelogo}

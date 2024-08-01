@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import profilelogo from './profilelogo.jpg';
 import heroImage from './heroImage.jpg';
 
+
 const Learn = () => {
+  
   return (
     <div className="min-h-screen bg-white flex flex-col items-center">
       <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md fixed top-0 z-50">
@@ -53,7 +55,7 @@ const Learn = () => {
       <header className="w-full bg-blue-600 text-white flex flex-col items-center justify-center py-20 mt-16 relative">
         <img src={heroImage} alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-50" />
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-bold mb-4 text-stroke">Learn About Financial Advisory</h1>
+          <h1 className="text-5xl font-bold mb-4 text-stroke stroke-black">Learn About Financial Advisory</h1>
           <p className="text-xl mb-8 max-w-2xl">
             Gain insights and knowledge to make informed financial decisions and boost your investment confidence.
           </p>
