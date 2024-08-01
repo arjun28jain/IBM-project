@@ -1,41 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React from 'react';
+import { Link } from 'react-router-dom';
 import profilelogo from './profilelogo.jpg';
+import heroImage from './heroImage.jpg'; // Add your hero image here
 
-const InvestmentGoals = () => {
-  const [selectedButton, setSelectedButton] = useState(null);
-  const [riskTolerance, setRiskTolerance] = useState(0.5);
-  const [selectedRisk, setSelectedRisk] = useState('Very conservative');
-
-  const handleButtonClick = (duration) => {
-    setSelectedButton(duration);
-  };
-
-  const handleRiskChange = (e) => {
-    const value = parseFloat(e.target.value);
-    setRiskTolerance(value);
-    const toleranceLevels = [
-      { level: 'Very conservative', max: 0.2 },
-      { level: 'Conservative', max: 0.4 },
-      { level: 'Moderate', max: 0.6 },
-      { level: 'Aggressive', max: 0.8 },
-      { level: 'Very aggressive', max: 1.0 },
-    ];
-
-    for (const level of toleranceLevels) {
-      if (value <= level.max) {
-        setSelectedRisk(level.level);
-        break;
-      }
-    }
-  };
-
-  const handleRiskSelection = (tolerance) => {
-    setSelectedRisk(tolerance);
-  };
-
+const HomePage = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center py-0 relative">
+    <div className="min-h-screen bg-white flex flex-col items-center">
       <nav className="w-full flex justify-between items-center p-4 bg-white shadow-md fixed top-0 z-50">
         <div className="flex items-center">
           <img src={profilelogo} alt="Logo" className="w-8 h-8 mr-2" />
@@ -80,91 +50,68 @@ const InvestmentGoals = () => {
         </Link>
       </nav>
 
-      <div className="w-full max-w-4xl mt-20 p-6">
-        <h1 className="text-2xl font-bold mb-4">Set your investment goals</h1>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            What is your initial investment?
-          </label>
-          <input
-            type="number"
-            className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring focus:border-blue-300"
-          />
+      <header className="w-full text-white flex flex-col items-center justify-center py-20 mt-16 relative">
+        <img src={heroImage} alt="Hero" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+        <div className="relative z-10">
+          <h1 className="text-5xl font-bold mb-4 ">Revolutionizing Financial Advisory</h1>
+          <p className="text-xl mb-8 text-center max-w-2xl">
+            Empowering retail investors with personalized, data-driven financial advice using generative AI.
+          </p>
+          <Link to="/learn" className="px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100">
+            Learn More
+          </Link>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Do you want to make recurring contributions?
-          </label>
-          <select className="w-full px-3 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring focus:border-blue-300">
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            Investment duration
-          </label>
-          <div className="flex space-x-2" id="duration">
-            {['Less than 1 year', '1-3 years', '4-6 years', '7-9 years', '10+ years'].map((duration) => (
-              <button
-                key={duration}
-                onClick={() => handleButtonClick(duration)}
-                className={`px-4 py-2 rounded-lg transform hover:scale-105 transition-all duration-200 ${
-                  selectedButton === duration
-                    ? 'bg-blue-500 text-white'
-                    : 'bg-gray-200 hover:bg-blue-500 hover:text-white'
-                }`}
-              >
-                {duration}
-              </button>
-            ))}
+      </header>
+
+      <section className="w-full max-w-6xl mt-20 p-6">
+        <h2 className="text-3xl font-bold mb-8 text-center">Our Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Personalized Investment Recommendations</h3>
+            <p>Get tailored investment advice based on your financial goals and risk tolerance.</p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Financial Literacy Education</h3>
+            <p>Learn about risk management and portfolio diversification to make informed decisions.</p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Impact Tracking</h3>
+            <p>Track the impact of your investments and see how they contribute to your financial goals.</p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Community Forums</h3>
+            <p>Engage with other investors, share insights, and collaborate on investment strategies.</p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Admin Dashboard</h3>
+            <p>Manage your profile and track your investment performance in one place.</p>
+          </div>
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md transform transition-transform duration-200 hover:bg-blue-500 hover:text-white hover:scale-105">
+            <h3 className="text-xl font-bold mb-4">Resource Center</h3>
+            <p>Access a wealth of resources and tools to enhance your financial knowledge.</p>
           </div>
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
-            How comfortable are you with potential investment losses?
-          </label>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.1"
-            value={riskTolerance}
-            onChange={handleRiskChange}
-            className="w-full mb-5"
-          />
-          <div className="mt-2">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Risk Tolerance: {selectedRisk}
-            </label>
-            <div className="space-y-2">
-              {['Very conservative', 'Conservative', 'Moderate', 'Aggressive', 'Very aggressive'].map((tolerance) => (
-                <div key={tolerance} className="flex items-center">
-                  <input
-                    type="radio"
-                    name="risk"
-                    value={tolerance}
-                    checked={selectedRisk === tolerance}
-                    onChange={() => handleRiskSelection(tolerance)}
-                    className="mr-2"
-                  />
-                  <label>{tolerance}</label>
-                </div>
-              ))}
-            </div>
-          </div>
+      </section>
+
+      <section className="w-full bg-gray-800 text-white py-9 mt-20">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-4">Join Us Today</h2>
+          <p className="text-xl mb-8">
+            Become a part of a growing community of informed investors. Get started on your financial journey with WealthBuild.
+          </p>
+          <Link to="/register" className="px-6 py-3 bg-white text-blue-600 rounded-lg font-bold hover:bg-gray-100">
+            Get Started
+          </Link>
         </div>
-        <div className="flex justify-between items-center mt-6">
-          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-            <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '20%' }}></div>
-          </div>
-          <button className="ml-4 px-6 py-2 bg-blue-500 text-white rounded-lg">Next</button>
+      </section>
+
+      <footer className="w-full bg-gray-800 text-white py-5">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <p>&copy; 2024 WealthBuild. All rights reserved.</p>
         </div>
-      </div>
-      <img src={profilelogo} alt="Profile Logo" className="fixed bottom-4 right-4 w-16 h-16" />
+      </footer>
     </div>
   );
 };
 
-export default InvestmentGoals;
+export default HomePage;

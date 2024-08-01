@@ -4,6 +4,19 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [function({ addUtilities }) {
+    const newUtilities = {
+      '.no-scrollbar': {
+        '-webkit-overflow-scrolling': 'touch',
+        'scrollbar-width': 'none',
+        '-ms-overflow-style': 'none',
+      },
+      '.no-scrollbar::-webkit-scrollbar': {
+        display: 'none',
+      },
+    }
+
+    addUtilities(newUtilities, ['responsive'])
+  }],
 }
 
