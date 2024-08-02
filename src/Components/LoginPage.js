@@ -36,7 +36,7 @@ const LoginPage = () => {
           onClick={handleLogin}
           className="w-full p-4 bg-blue-500 text-white text-lg rounded-md hover:bg-blue-700 transition-colors"
         >
-          Login
+          REGISTER
         </button>
       </div>
     </div>
